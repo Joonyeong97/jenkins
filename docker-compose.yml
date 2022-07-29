@@ -1,7 +1,7 @@
 version: '2.3'
 services:
   jenkins:
-    image: jenkins/jenkins:lts-jdk11
+    image: joon09/jenkins-docker:1.0
     user: root
     restart: unless-stopped
     hostname: jenkins
@@ -12,7 +12,7 @@ services:
       - ./jenkinsdata/data:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
       - /usr/bin/docker:/usr/bin/docker
-      - /usr/bin/docker-compose:/usr/bin/docker-compose
+#      - /usr/local/bin/docker-compose:/usr/bin/docker-compose
     ports:
       - 8083:8080
       - 50000:50000
